@@ -1,3 +1,7 @@
+require('dotenv').config();
+
+const port = process.env.SERVER_PORT || 80
+
 const server = require("./app")({
   logger: {
     level: "info",
@@ -5,7 +9,7 @@ const server = require("./app")({
   },
 });
 
-server.listen(3000, (err, address) => {
+server.listen(port, '0.0.0.0',(err, address) => {
   if (err) {
     console.log(err);
     process.exit(1);

@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      target: production
+      args:
+        - SERVER_PORT=$SERVER_PORT
+    volumes:
+      - .:/app
+    env_file: .env
+    environment:
+      - SERVER_PORT=$SERVER_PORT
+      - NODE_ENV=production
+    ports:
+      - "$SERVER_PORT:$SERVER_PORT"
