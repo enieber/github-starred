@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "fastify": "^3.16.2"
+    "fastify": "^3.16.2",
+    "fastify-swagger": "^4.7.0"
   }
 }
