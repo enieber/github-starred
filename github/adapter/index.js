@@ -4,7 +4,7 @@ exports.transformRepoItem = (repoItem) => {
   }
   const { id, name, description, url, language } = repoItem;
 
-  if (!id || !name || !description || !url) {
+  if (!id || !name || !url) {
     throw new TypeError("the object in repoItem is not be undefined");
   }
 

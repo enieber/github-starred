@@ -1,17 +1,18 @@
 {
   "name": "github",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "server.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon app.js",
-    "start": "node app.js",
+    "dev": "nodemon server.js",
+    "start": "node server.js",
     "test": "jest",
     "test:watch": "jest --watch"
   },
   "devDependencies": {
     "jest": "^27.0.1",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "pino-pretty": "^5.0.0"
   },
   "dependencies": {
     "axios": "^0.21.1",

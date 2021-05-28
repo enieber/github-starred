@@ -1,18 +1,14 @@
-const fastify = require("fastify")({ logger: true });
-
+const fastify = require("fastify");
 const githubRouters = require("./github/routers");
 
-githubRouters.forEach((route, index) => {
-  fastify.route(route);
-});
+function build(opts = { logger: true }) {
+  const app = fastify(opts);
 
-const start = async () => {
-  try {
-    await fastify.listen(3000);
-  } catch (err) {
-    fastify.log.error(err);
-    process.exit(1);
-  }
-};
+  githubRouters.forEach((route, index) => {
+    app.route(route);
+  });
 
-start();
+  return app;
+}
+
+module.exports = build;
