@@ -33,6 +33,13 @@ const routes = [
               type: "array",
               items: {
                 type: "object",
+                properties: {
+                  id: { type: "number" },
+                  name: { type: "string" },
+                  description: { type: "string" },
+                  url: { type: "string" },
+                  language: { type: "string" },
+                },
               },
             },
           },

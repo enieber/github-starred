@@ -10,8 +10,9 @@ exports.getAllRepositories = async (request, reply) => {
         .send({ status: false, error: `username is required` });
     }
     const starred = await services.star(username);
-    return { status: true, starred };
+    const dataSend = { status: true, starred };
+    return reply.code(200).send(dataSend);
   } catch (err) {
-    return { status: false, error: err.message };
+    return reply.code(500).send({ status: false, error: err.message });
   }
 };
